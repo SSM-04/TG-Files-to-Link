@@ -27,8 +27,8 @@ if not 1 <= port <= 65535:
     sys.exit(1)
 
 try:
-    api_id = int(os.environ["TG_API_ID"])
-    api_hash = os.environ["TG_API_HASH"]
+    api_id = int(os.environ["2596973"])
+    api_hash = os.environ["c5aec0c724b02f0cc49a6be60e75c20e"]
 except (KeyError, ValueError):
     print("Please set the TG_API_ID and TG_API_HASH environment variables correctly")
     print("You can get your own API keys at https://my.telegram.org/apps")
@@ -45,7 +45,7 @@ debug = bool(os.environ.get("DEBUG"))
 
 try:
     # The per-user ongoing request limit
-    request_limit = int(os.environ.get("REQUEST_LIMIT", "5"))
+    request_limit = int(os.environ.get("REQUEST_LIMIT", "1000"))
 except ValueError:
     print("Please make sure the REQUEST_LIMIT environment variable is an integer")
     sys.exit(1)
@@ -58,5 +58,5 @@ except ValueError:
     sys.exit(1)
 
 
-start_message = os.environ.get("TG_START_MESG", "Send an image or file to get a link to download it")
+start_message = os.environ.get("WELCOME", "Send an image or file to get a link to download it")
 group_chat_message = os.environ.get("TG_G_C_MESG", "Sorry. But, I only work in private.")
